@@ -1,0 +1,6 @@
+@eReceiptApplication_HostAddress = http://localhost:5081
+
+GET {{eReceiptApplication_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
