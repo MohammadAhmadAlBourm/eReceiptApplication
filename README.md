@@ -61,7 +61,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 Contributions are welcome! Please fork this repository and submit pull requests.
 
 ## Contact
-For any inquiries or issues, please contact [mohammadbourm@gmail.com].
+For any inquiries or issues, please contact mohammadbourm@gmail.com.
 
 ## Support
 If you find this project helpful and want to support its development, consider buying me a coffee:
