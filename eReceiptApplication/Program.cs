@@ -1,12 +1,16 @@
-using eReceiptApplication.Contracts;
+using Carter;
 using eReceiptApplication.Services;
-using Razor.Templating.Core;
 
 var builder = WebApplication.CreateBuilder(args);
+
+
+License.LicenseKey = builder.Configuration["IronPdf:LicenseKey"];
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddRazorTemplating();
+
+builder.Services.AddCarter();
 
 
 builder.Services.AddSingleton<InvoiceFactory>();
@@ -21,19 +25,5 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-
-app.MapGet("invoice-report", async (InvoiceFactory invoiceFactory) =>
-{
-    Invoice invoice = invoiceFactory.Create();
-
-    var html = await RazorTemplateEngine.RenderAsync("Views/InvoiceReport.cshtml", invoice);
-
-    var renderer = new ChromePdfRenderer();
-
-    using var pdfDocument = renderer.RenderHtmlAsPdf(html);
-
-    return Results.File(pdfDocument.BinaryData, "application/pdf", $"invoice-{invoice.Number}.pdf");
-});
-
-
+app.MapCarter();
 app.Run();
