@@ -9,7 +9,7 @@ public class Endpoints : ICarterModule
 {
     public void AddRoutes(IEndpointRouteBuilder app)
     {
-        app.MapGet("invoice-report", async (InvoiceFactory invoiceFactory) =>
+        app.MapGet("api/invoice-report", async (InvoiceFactory invoiceFactory) =>
         {
             Invoice invoice = invoiceFactory.Create();
 
