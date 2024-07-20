@@ -13,7 +13,7 @@ eReceiptApplication is a web application developed using ASP.NET Core Web API v8
 - **ASP.NET Core Web API v8**
 - **Minimal API**
 - **Carter NuGet Package**
-- **RazorTemplateEngine**
+- **Razor.Templating.Core NuGet Package**
 - **IronPdf NuGet Package**
 
 ## Getting Started
